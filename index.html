@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="theme-color" content="#080817" />
+    <meta name="description" content="Neon Defender — a synthwave arcade space shooter." />
+    <title>Neon Defender</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <canvas id="game" aria-label="Neon Defender space shooter"></canvas>
+      <header class="hud" id="hud" aria-live="polite">
+        <div class="brand-mark"><span class="brand-icon">✦</span><span>ND<span class="brand-dot">.</span></span></div>
+        <div class="hud-stats">
+          <div class="stat"><span class="stat-label">SCORE</span><strong id="score">000000</strong></div>
+          <div class="stat"><span class="stat-label">BEST</span><strong id="best">000000</strong></div>
+          <div class="stat wave-stat"><span class="stat-label">WAVE</span><strong id="wave">01</strong></div>
+          <div class="stat combo-stat" id="comboStat"><span class="stat-label">COMBO</span><strong id="combo">×1</strong></div>
+        </div>
+        <div class="hud-right"><div class="health-wrap"><span class="stat-label">HULL</span><div class="health-track"><i id="healthBar"></i></div><span id="healthText">100%</span></div><div class="lives" id="lives" aria-label="Lives">◆ ◆ ◆</div><button class="icon-button" id="muteButton" aria-label="Mute sound" title="Mute sound"><span id="muteIcon">♫</span></button></div>
+      </header>
+      <div class="powerup-slots" id="powerups"></div>
+      <div class="boss-wrap" id="bossWrap"><div class="boss-caption"><span>SECTOR GUARDIAN</span><span id="bossHealthText">100%</span></div><div class="boss-track"><i id="bossBar"></i></div></div>
+      <div class="mobile-hint" id="mobileHint">DRAG TO MOVE · AUTO-FIRE</div>
+      <section class="overlay" id="overlay" aria-label="Game menu">
+        <div class="menu-card">
+          <div class="eyebrow"><i></i> DEEP SPACE DEFENSE <i></i></div>
+          <div class="title-lockup"><span class="title-kicker">THE LAST LINE OF</span><h1>NEON<span>DEFENDER</span></h1></div>
+          <p class="menu-copy" id="menuCopy">The frontier is under attack.<br />How long can you hold the line?</p>
+          <div class="menu-meta"><span><kbd>WASD</kbd> / <kbd>ARROWS</kbd> MOVE</span><span><kbd>SPACE</kbd> FIRE</span><span><kbd>P</kbd> PAUSE</span></div>
+          <button class="play-button" id="playButton"><span>INITIATE DEFENSE</span><b>↗</b></button>
+          <div class="menu-foot"><span id="menuScore"></span><span>© 2089 · ORBITAL COMMAND</span></div>
+        </div>
+      </section>
+      <div class="toast" id="toast" role="status"></div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
